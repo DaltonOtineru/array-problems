@@ -2,25 +2,24 @@
 //create a function that will get rid of duplicate elements
 //
 
-let array = ["apple", "banana", "Strawberry", "apple", "grapes", "Banana", "strawberry", "blueberries"]
+const array = ["apple", "banana", "Strawberry", "apple", "grapes", "Banana", "strawberry", "blueberries"]
 
-function removeDuplicates(array){
-    for(let i = 0; i < array.length; i++){
-        for(let j = 0; j < array.length; j++){
-            if( i !== j){
-            if(array[i].toLowerCase() === array[j].toLowerCase()){
-                array.splice(j, 1)
-                }
-            }
-        }
+function removeDuplicates(arr){
+   let uniqueValues = [];
+   for(let i =0; i < arr.length; i++){
+       if(!uniqueValues.includes(arr[i].toLowerCase())){
+           uniqueValues.push(arr[i].toLowerCase());
+       }
     }
-  return array;
-}
-let result = removeDuplicates(array);
+    return uniqueValues;
+ }
+
+const result = removeDuplicates(array);
 console.log(result);
 
 // returns -> ["apple", "banana", "Strawberry", "grapes", "blueberries"]
-        
+
+
 
 
 
